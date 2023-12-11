@@ -175,6 +175,7 @@ export class TranslateState implements NgxsOnInit {
   ): Promise<void> {
     const {spokenLanguage} = getState();
     const trimmedText = text.trim();
+    console.log('reached', text);
 
     patchState({spokenLanguageText: text, normalizedSpokenLanguageText: null});
     const detectLanguage = this.detectLanguage(trimmedText, patchState);

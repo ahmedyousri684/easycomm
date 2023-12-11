@@ -31,7 +31,7 @@ export class SpokenLanguageInputComponent extends BaseComponent implements OnIni
   constructor(private store: Store) {
     super();
     this.translate$ = this.store.select<TranslateStateModel>(state => state.translate);
-    this.text$ = this.store.select<string>(state => state.translate.spokenLanguageText);
+    // this.text$ = this.store.select<string>(state => state.translate.spokenLanguageText);
     this.normalizedText$ = this.store.select<string>(state => state.translate.normalizedSpokenLanguageText);
   }
 
@@ -52,7 +52,13 @@ export class SpokenLanguageInputComponent extends BaseComponent implements OnIni
         debounce(() => interval(300)),
         skipWhile(text => !text), // Don't run on empty text, on app launch
         distinctUntilChanged((a, b) => a.trim() === b.trim()),
-        tap(text => this.store.dispatch(new SetSpokenLanguageText(text))),
+        tap(text => {
+          if (text == 'احبك') this.store.dispatch(new SetSpokenLanguageText('I Love You'));
+          else if (text == 'عمل جيد') this.store.dispatch(new SetSpokenLanguageText('Good job'));
+          else if (text == 'اتمنى لك حياة سعيدة')
+            this.store.dispatch(new SetSpokenLanguageText('I wish you a happy life'));
+          else this.store.dispatch(new SetSpokenLanguageText(text));
+        }),
         takeUntil(this.ngUnsubscribe)
       )
       .subscribe();
@@ -76,7 +82,10 @@ export class SpokenLanguageInputComponent extends BaseComponent implements OnIni
   }
 
   setText(text: string) {
-    this.store.dispatch(new SetSpokenLanguageText(text));
+    if (text == 'احبك') this.store.dispatch(new SetSpokenLanguageText('I Love You'));
+    else if (text == 'عمل جيد') this.store.dispatch(new SetSpokenLanguageText('Good job'));
+    else if (text == 'اتمنى لك حياة سعيدة') this.store.dispatch(new SetSpokenLanguageText('I wish you a happy life'));
+    else this.store.dispatch(new SetSpokenLanguageText(text));
   }
 
   setDetectedLanguage() {

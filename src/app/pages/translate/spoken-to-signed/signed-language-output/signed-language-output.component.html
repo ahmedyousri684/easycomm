@@ -13,37 +13,24 @@
   <ng-container *ngIf="pose$ | async as pose; else noPose">
     <ng-container *ngIf="poseViewerSetting$ | async as poseViewerSetting">
       <app-skeleton-pose-viewer *ngIf="poseViewerSetting === 'pose'" [src]="pose" />
-      <app-human-pose-viewer *ngIf="poseViewerSetting === 'person'" [src]="pose" />
-      <app-avatar-pose-viewer *ngIf="poseViewerSetting === 'avatar'" [src]="pose" />
+      <!-- <app-human-pose-viewer *ngIf="poseViewerSetting === 'person'" [src]="pose" /> -->
+      <!-- <app-avatar-pose-viewer *ngIf="poseViewerSetting === 'avatar'" [src]="pose" /> -->
     </ng-container>
   </ng-container>
   <ng-template #noPose></ng-template>
 </ng-template>
 
-<div class="actions-row" *ngIf="pose$ | async as pose">
+<!-- <div class="actions-row" *ngIf="pose$ | async as pose">
   <ng-container *ngIf="videoUrl; else spinner">
-    <ion-button
-      class="circle-icon"
-      fill="clear"
-      shape="round"
-      color="dark"
-      (click)="downloadTranslation()"
+    <ion-button class="circle-icon" fill="clear" shape="round" color="dark" (click)="downloadTranslation()"
       [attr.aria-label]="'translate.spoken-to-signed.actions.download' | transloco"
-      [matTooltip]="'translate.spoken-to-signed.actions.download' | transloco"
-      [matTooltipPosition]="'above'">
+      [matTooltip]="'translate.spoken-to-signed.actions.download' | transloco" [matTooltipPosition]="'above'">
       <ion-icon name="download-outline" slot="icon-only"></ion-icon>
     </ion-button>
 
-    <ion-button
-      class="circle-icon"
-      fill="clear"
-      shape="round"
-      color="dark"
-      *ngIf="isSharingSupported"
-      (click)="shareTranslation()"
-      [attr.aria-label]="'translate.spoken-to-signed.actions.share' | transloco"
-      [matTooltip]="'translate.spoken-to-signed.actions.share' | transloco"
-      [matTooltipPosition]="'above'">
+    <ion-button class="circle-icon" fill="clear" shape="round" color="dark" *ngIf="isSharingSupported"
+      (click)="shareTranslation()" [attr.aria-label]="'translate.spoken-to-signed.actions.share' | transloco"
+      [matTooltip]="'translate.spoken-to-signed.actions.share' | transloco" [matTooltipPosition]="'above'">
       <ion-icon [name]="shareIcon()" slot="icon-only"></ion-icon>
     </ion-button>
   </ng-container>
@@ -53,4 +40,4 @@
     </ion-button>
   </ng-template>
   <app-viewer-selector></app-viewer-selector>
-</div>
+</div> -->

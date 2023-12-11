@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       <ion-icon name="analytics"></ion-icon>
@@ -18,13 +18,11 @@
         </ion-card-header>
         <ion-card-content>
           <p>
-            <app-benchmark-item
-              *ngFor="let item of stat.value | keyvalue"
-              [matTooltip]="t('stats.' + stat.key + '.' + item.key)"
-              [timings]="item.value"></app-benchmark-item>
+            <app-benchmark-item *ngFor="let item of stat.value | keyvalue"
+              [matTooltip]="t('stats.' + stat.key + '.' + item.key)" [timings]="item.value"></app-benchmark-item>
           </p>
         </ion-card-content>
       </ion-card>
     </div>
   </ng-container>
-</ion-content>
+</ion-content> -->

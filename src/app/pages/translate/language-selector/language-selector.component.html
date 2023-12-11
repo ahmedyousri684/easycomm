@@ -24,7 +24,7 @@
   </mat-tab-group>
 
   <!-- Language button for small screens -->
-  <ng-container *ngIf="hasLanguageDetection && detectedLanguage && !language; else detectLanguage">
+  <!-- <ng-container *ngIf="hasLanguageDetection && detectedLanguage && !language; else detectLanguage">
     <ion-button
       [matMenuTriggerFor]="signedLanguagesMenu"
       class="menu-language-button"
@@ -34,8 +34,8 @@
       <app-flag-icon *ngIf="flags" [country]="langCountries[detectedLanguage]" [squared]="true"></app-flag-icon>
       {{ t('detected', {lang: langNames[detectedLanguage]}) }}
     </ion-button>
-  </ng-container>
-  <ng-template #detectLanguage>
+  </ng-container> -->
+  <!-- <ng-template #detectLanguage>
     <ion-button
       [matMenuTriggerFor]="signedLanguagesMenu"
       class="menu-language-button"
@@ -48,26 +48,23 @@
       </ng-container>
       <ng-template #noLanguage>{{ t('detect') }}</ng-template>
     </ion-button>
-  </ng-template>
+  </ng-template> -->
 
   <!-- Expand icon for large screens -->
-  <ion-button
-    fill="clear"
-    color="medium"
-    [matMenuTriggerFor]="signedLanguagesMenu"
-    class="menu-icon-button"
+  <!-- <ion-button fill="clear" color="medium" [matMenuTriggerFor]="signedLanguagesMenu" class="menu-icon-button"
     [attr.aria-label]="t('more')">
     <ion-icon name="chevron-down"></ion-icon>
-  </ion-button>
-  <mat-menu #signedLanguagesMenu class="language-selector-menu">
-    <ng-template matMenuContent>
-      <button (click)="selectLanguage(null)" mat-menu-item *ngIf="hasLanguageDetection">
+  </ion-button> -->
+  <!-- <mat-menu #signedLanguagesMenu class="language-selector-menu"> -->
+  <!-- <ng-template matMenuContent> -->
+  <!-- <button (click)="selectLanguage(null)" mat-menu-item *ngIf="hasLanguageDetection">
         {{ t('detect') }}
       </button>
       <button (click)="selectLanguage(language)" *ngFor="let language of languages" mat-menu-item>
         <app-flag-icon *ngIf="flags" [country]="langCountries[language]" [squared]="true"></app-flag-icon>
         {{ langNames[language] }}
-      </button>
-    </ng-template>
-  </mat-menu>
-</ng-container>
+      </button> -->
+  <!-- </ng-template> -->
+  <!-- </mat-menu> -->
+  <!-- </ng-container> --></ng-container
+>
