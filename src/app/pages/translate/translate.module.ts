@@ -10,7 +10,6 @@ import {SendFeedbackComponent} from './send-feedback/send-feedback.component';
 import {SignedToSpokenModule} from './signed-to-spoken/signed-to-spoken.module';
 import {TranslateInputButtonComponent} from './input/button/button.component';
 import {DropPoseFileModule} from './drop-pose-file/drop-pose-file.module';
-import {TranslateLanguageSelectorsModule} from './language-selectors/language-selectors.module';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NgxsModule} from '@ngxs/store';
 import {TranslateState} from '../../modules/translate/translate.state';
@@ -28,12 +27,7 @@ const routes = [
   },
 ];
 
-const componentModules = [
-  SpokenToSignedModule,
-  SignedToSpokenModule,
-  DropPoseFileModule,
-  TranslateLanguageSelectorsModule,
-];
+const componentModules = [SpokenToSignedModule, SignedToSpokenModule, DropPoseFileModule];
 
 const components = [
   SendFeedbackComponent,
