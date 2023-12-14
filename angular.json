@@ -271,7 +271,9 @@
               "/about/tools",
               "/legal/terms",
               "/legal/privacy",
-              "/legal/licenses"
+              "/legal/licenses",
+              "/login",
+              "/signup"
             ]
           },
           "configurations": {
